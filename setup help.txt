@@ -1,0 +1,27 @@
+Step 9: Running the Application
+How to run in Visual Studio:
+
+Create Virtual Environment:
+
+bashpython -m venv brd_validator_env
+
+Activate Virtual Environment:
+
+bash# Windows
+brd_validator_env\Scripts\activate
+
+# Linux/Mac
+source brd_validator_env/bin/activate
+
+Install Dependencies:
+
+bash
+pip install -r requirements.txt
+
+Run the Application:
+
+bash
+streamlit run app.py
+
+Open in Browser:
+The app will automatically open at http://localhost:8501

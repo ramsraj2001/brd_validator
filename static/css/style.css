@@ -1,0 +1,513 @@
+/* ================================================================
+   BRD Validator Application - Custom CSS Styles
+   ================================================================ */
+
+/* ================== Root Variables ================== */
+:root {
+    --primary-color: #1f77b4;
+    --secondary-color: #2e86c1;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #495057;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ================== Global Styles ================== */
+.main {
+    padding-top: 2rem;
+}
+
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* ================== Header Styles ================== */
+.main-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+/* ================== Card Components ================== */
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.metric-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--dark-gray);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-card p {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ================== Severity-based Card Styles ================== */
+.severity-critical {
+    border-left-color: var(--danger-color);
+}
+
+.severity-critical::before {
+    background: linear-gradient(90deg, var(--danger-color), #ff6b7a);
+}
+
+.severity-high {
+    border-left-color: #ff8c00;
+}
+
+.severity-high::before {
+    background: linear-gradient(90deg, #ff8c00, #ffa726);
+}
+
+.severity-medium {
+    border-left-color: var(--warning-color);
+}
+
+.severity-medium::before {
+    background: linear-gradient(90deg, var(--warning-color), #ffdd4a);
+}
+
+.severity-low {
+    border-left-color: #90ee90;
+}
+
+.severity-low::before {
+    background: linear-gradient(90deg, #90ee90, #a8f5a8);
+}
+
+/* ================== Status Styles ================== */
+.status-valid {
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-valid::before {
+    content: '✅';
+    font-size: 1.5rem;
+}
+
+.status-invalid {
+    color: var(--danger-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-invalid::before {
+    content: '❌';
+    font-size: 1.5rem;
+}
+
+/* ================== Progress Bar Styles ================== */
+.stProgress .stProgress > div > div > div {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+}
+
+/* ================== Button Styles ================== */
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* ================== File Upload Styles ================== */
+.stFileUploader {
+    border: 2px dashed var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    background: rgba(31, 119, 180, 0.05);
+    transition: var(--transition);
+}
+
+.stFileUploader:hover {
+    border-color: var(--secondary-color);
+    background: rgba(31, 119, 180, 0.1);
+}
+
+/* ================== Sidebar Styles ================== */
+.css-1d391kg {
+    background: linear-gradient(180deg, #ffffff, #f8f9fa);
+    border-right: 1px solid var(--medium-gray);
+}
+
+.css-1d391kg .stMarkdown {
+    color: var(--dark-gray);
+}
+
+/* ================== Table Styles ================== */
+.stDataFrame {
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.stDataFrame table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.stDataFrame th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+}
+
+.stDataFrame td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    transition: var(--transition);
+}
+
+.stDataFrame tr:hover td {
+    background: var(--light-gray);
+}
+
+/* ================== Tab Styles ================== */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: var(--light-gray);
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+/* ================== Alert Styles ================== */
+.stAlert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    padding: 1rem 1.5rem;
+}
+
+.stAlert[data-baseweb="notification"] [data-testid="alertIcon"] {
+    margin-right: 1rem;
+}
+
+/* ================== Expander Styles ================== */
+.stExpander {
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.stExpander > div:first-child {
+    background: linear-gradient(135deg, var(--light-gray), white);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.stExpander > div:first-child:hover {
+    background: linear-gradient(135deg, var(--medium-gray), var(--light-gray));
+}
+
+/* ================== Plotly Chart Enhancements ================== */
+.js-plotly-plot {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+/* ================== Welcome Page Styles ================== */
+.welcome-container {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+    margin: 2rem 0;
+}
+
+.welcome-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    background: var(--light-gray);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.feature-list li:hover {
+    background: var(--medium-gray);
+    transform: translateX(5px);
+}
+
+/* ================== Validation Results Styles ================== */
+.validation-result-item {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: var(--box-shadow);
+    border-left: 4px solid var(--medium-gray);
+    transition: var(--transition);
+}
+
+.validation-result-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+}
+
+.validation-result-item.passed {
+    border-left-color: var(--success-color);
+}
+
+.validation-result-item.failed {
+    border-left-color: var(--danger-color);
+}
+
+.validation-result-item .rule-id {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.validation-result-item .rule-description {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: var(--dark-gray);
+}
+
+.validation-result-item .rule-details {
+    font-size: 0.8rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* ================== Loading Spinner ================== */
+.stSpinner {
+    border: 4px solid var(--light-gray);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ================== Responsive Design ================== */
+@media (max-width: 768px) {
+    .main-header {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .metric-card {
+        padding: 1rem;
+    }
+    
+    .metric-card p {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-container {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        font-size: 1.5rem;
+    }
+    
+    .metric-card p {
+        font-size: 1.2rem;
+    }
+    
+    .stButton > button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+/* ================== Dark Mode Compatibility ================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-gray: #2d3748;
+        --medium-gray: #4a5568;
+        --dark-gray: #e2e8f0;
+    }
+    
+    .metric-card {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+    
+    .welcome-container {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+    
+    .validation-result-item {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+}
+
+/* ================== Print Styles ================== */
+@media print {
+    .stSidebar,
+    .stButton,
+    .stFileUploader {
+        display: none !important;
+    }
+    
+    .main-header {
+        color: black !important;
+        text-shadow: none !important;
+    }
+    
+    .metric-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+    }
+    
+    .js-plotly-plot {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}
+
+/* ================== Accessibility Enhancements ================== */
+.metric-card:focus,
+.validation-result-item:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.stButton > button:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .metric-card {
+        border: 2px solid black;
+    }
+    
+    .stButton > button {
+        border: 2px solid black;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
